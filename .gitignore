@@ -1,0 +1,25 @@
+# Файлы и папки операционной системы
+.DS_Store
+Thumbs.db
+
+# Файлы редактора
+.idea
+*.sublime*
+.vscode
+.run
+
+# Вспомогательные файлы
+*.log*
+node_modules/
+version.json
+
+# Файлы сборки
+public/
+build/
+storybook-static/
+
+# env
+.env
+
+# Файлы GitLab, в т.ч. шаблоны
+.gitlab/
