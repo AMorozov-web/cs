@@ -1,18 +1,18 @@
 class FizzBuzz {
-  #currentValue = 1n;
-  #delay = 10;
+  private currentValue: bigint = 1n;
+  private delay: number = 10;
 
   async *[Symbol.asyncIterator]() {
     let lastTime = Date.now();
 
     while(true) {
-      yield this.#get();
-      this.#currentValue++
+      yield this.get();
+      this.currentValue++
 
       const diff = Date.now() - lastTime;
 
-      if (diff > this.#delay) {
-        await this.#wait();
+      if (diff > this.delay) {
+        await this.wait();
         lastTime = Date.now();
       }
     }
@@ -21,8 +21,8 @@ class FizzBuzz {
 
   *[Symbol.iterator]() {
     while(true) {
-      yield this.#get();
-      this.#currentValue++
+      yield this.get();
+      this.currentValue++
     }
   }
 
@@ -30,32 +30,32 @@ class FizzBuzz {
     return this[Symbol.iterator]();
   }
 
-  reset() {
-    this.#currentValue = 1n;
+  reset(): void {
+    this.currentValue = 1n;
   }
 
-  #wait() {
-    return new Promise((resolve) => setTimeout(resolve, this.#delay) )
+  private wait(): Promise<void> {
+    return new Promise((resolve) => setTimeout(resolve, this.delay) )
   }
 
-  #get() {
+  private get(): string | bigint {
     switch(true) {
-      case this.#isFizz(this.#currentValue):
+      case this.isFizz(this.currentValue):
         return 'Fizz';
-      case this.#isBuzz(this.#currentValue):
+      case this.isBuzz(this.currentValue):
         return 'Buzz';
-      case this.#isBuzz(this.#currentValue) && this.#isFizz(this.#currentValue):
+      case this.isBuzz(this.currentValue) && this.isFizz(this.currentValue):
         return 'Buzz';
       default:
-        return this.#currentValue.toString();
+        return this.currentValue.toString();
     }
   }
 
-  #isFizz(value) {
+  private isFizz(value: bigint): boolean {
     return value % 3n === 0n || value % 5n === 0n;
   }
 
-  #isBuzz(value) {
+  private isBuzz(value: bigint): boolean {
     return value % 4n === 0n;
   }
 }

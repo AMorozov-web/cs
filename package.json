@@ -1,0 +1,22 @@
+{
+  "name": "cs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AMorozov-web/cs.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AMorozov-web/cs/issues"
+  },
+  "homepage": "https://github.com/AMorozov-web/cs#readme",
+  "devDependencies": {
+    "typescript": "5.4.3"
+  }
+}

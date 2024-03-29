@@ -30,7 +30,7 @@ const program = [
 
 execute(program);
 
-function execute(program) {
+function execute(program: number[]) {
   let cursor = 0;
   let acc = 0;
 
