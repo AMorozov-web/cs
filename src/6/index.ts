@@ -33,6 +33,7 @@ class LinkedList<T> {
     clear(): void {
         this.head = null;
         this.tail = null;
+        this.length = 0;
     }
 
     push(value: T): number {
@@ -178,9 +179,7 @@ class LinkedList<T> {
 
     delete(el: ListNode<T>): boolean {
         if (this.length === 1 && el === this.head) {
-            this.head = null;
-            this.tail = null;
-            this.length = 0;
+            this.clear();
 
             return true;
         }
