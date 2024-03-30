@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/AMorozov-web/cs#readme",
   "devDependencies": {
+    "jest": "29.7.0",
     "typescript": "5.4.3"
   }
 }
