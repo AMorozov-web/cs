@@ -136,6 +136,10 @@ class Dequeue<T extends DequeueArrayTypes> {
     length: number;
 
     constructor(TypedArrayConstructor: DequeueArrayConstructor<T>, capacity: number) {
+        if (capacity < 0 || capacity % 1 !== 0) {
+            throw new TypeError('Invalid capacity');
+        }
+
         this.TypedArrayConstructor = TypedArrayConstructor;
         this.capacity = capacity;
         this.length = 0;
