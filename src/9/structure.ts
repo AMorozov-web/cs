@@ -24,7 +24,7 @@ type CreatedStructure<T extends Record<string, unknown> | unknown[]> = T & {
 
 class Structure {
     private readonly scheme: Record<string, StructureType>;
-    readonly size: number;
+    private readonly size: number;
 
     constructor(scheme: Record<string, Structure | StructureType>) {
         const flatScheme: Record<string, StructureType> = {};
