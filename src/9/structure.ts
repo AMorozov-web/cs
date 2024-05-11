@@ -192,7 +192,7 @@ class Structure {
                             set(value: string): void {
                                 const view = new Uint8Array(buffer, offset, maxLength);
 
-                                for (let i = 0; i < view.length; i++) {
+                                for (let i = 0; i < maxLength; i++) {
                                     view[i] = value.charCodeAt(i);
                                 }
                             },
