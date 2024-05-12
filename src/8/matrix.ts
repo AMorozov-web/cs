@@ -19,10 +19,10 @@ interface ChangeMultiplyOrderFunction {
     (prevOrder: number[]): number[];
 }
 
-class Matrix<T extends MatrixArrayTypes> {
+export class Matrix<T extends MatrixArrayTypes> {
     private readonly array: T;
-    private readonly dimensions : number[];
     private multiply: number[];
+    dimensions : number[];
 
 
     constructor(TypedArrayConstructor: MatrixArrayConstructor<T>, ...dimensions: number[]) {
@@ -81,29 +81,29 @@ class Matrix<T extends MatrixArrayTypes> {
     }
 }
 
-const matrix2n2n2 = new Matrix(Int32Array, 2, 2, 2);
-
-matrix2n2n2.setMultiplyOrder(([a, b, c]) => [c, a, b]); // Меняем множители таким образом, чтобы значения шли подряд в итераторе
-
-matrix2n2n2.set(0, 0, 0, 1);
-matrix2n2n2.set(0, 1, 0, 2);
-matrix2n2n2.set(0, 0, 1, 3);
-matrix2n2n2.set(0, 1, 1, 4);
-
-matrix2n2n2.set(1, 0, 0, 5);
-matrix2n2n2.set(1, 1, 0, 6);
-matrix2n2n2.set(1, 0, 1, 7);
-matrix2n2n2.set(1, 1, 1, 8);
-
-matrix2n2n2.get(0, 0, 0); // 1
-matrix2n2n2.get(0, 1, 0); // 2
-matrix2n2n2.get(0, 0, 1); // 3
-matrix2n2n2.get(0, 1, 1); // 4
-
-matrix2n2n2.get(1, 0, 0); // 5
-matrix2n2n2.get(1, 1, 0); // 6
-matrix2n2n2.get(1, 0, 1); // 7
-matrix2n2n2.get(1, 1, 1); // 8
-
-console.log(matrix2n2n2.buffer);  // Ссылка на ArrayBuffer
-console.log(Array.from(matrix2n2n2.values()));
+// const matrix2n2n2 = new Matrix(Int32Array, 2, 2, 2);
+//
+// matrix2n2n2.setMultiplyOrder(([a, b, c]) => [c, a, b]); // Меняем множители таким образом, чтобы значения шли подряд в итераторе
+//
+// matrix2n2n2.set(0, 0, 0, 1);
+// matrix2n2n2.set(0, 1, 0, 2);
+// matrix2n2n2.set(0, 0, 1, 3);
+// matrix2n2n2.set(0, 1, 1, 4);
+//
+// matrix2n2n2.set(1, 0, 0, 5);
+// matrix2n2n2.set(1, 1, 0, 6);
+// matrix2n2n2.set(1, 0, 1, 7);
+// matrix2n2n2.set(1, 1, 1, 8);
+//
+// matrix2n2n2.get(0, 0, 0); // 1
+// matrix2n2n2.get(0, 1, 0); // 2
+// matrix2n2n2.get(0, 0, 1); // 3
+// matrix2n2n2.get(0, 1, 1); // 4
+//
+// matrix2n2n2.get(1, 0, 0); // 5
+// matrix2n2n2.get(1, 1, 0); // 6
+// matrix2n2n2.get(1, 0, 1); // 7
+// matrix2n2n2.get(1, 1, 1); // 8
+//
+// console.log('matrix buffer', matrix2n2n2.buffer);  // Ссылка на ArrayBuffer
+// console.log('matrix values', Array.from(matrix2n2n2.values()));
