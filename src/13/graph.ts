@@ -205,7 +205,6 @@ const adjacencyMatrix = new Matrix(Uint8Array, 10, 10);
 // Заполняем матрицу смежности
 adjacencyMatrix.set(0, 1, 1);
 adjacencyMatrix.set(1, 6, 4);
-adjacencyMatrix.set(1, 3, 5);
 adjacencyMatrix.set(2, 3, 6);
 adjacencyMatrix.set(0, 8, 7);
 adjacencyMatrix.set(1, 2, 8);
