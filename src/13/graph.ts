@@ -110,6 +110,7 @@ class Graph {
         for (const [v1, v2] of this.transitiveClosures.values()) {
             this.matrix.set(v1, v2, 0);
         }
+        this.transitiveClosures.clear();
     }
     //Выводит в консоль последовательность связей в dot
     toDot(): void {
