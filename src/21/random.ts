@@ -1,6 +1,6 @@
 // Необходимо написать итератор для генерации случайных чисел по заданным параметрам
 
-const random = (min: number, max: number): IterableIterator<number> => {
+export const random = (min: number, max: number): IterableIterator<number> => {
     const get = (): number => {
         return Math.floor(Math.random() * (max - min) + min);
     }
