@@ -2,7 +2,7 @@ import {random} from './random';
 
 // Необходимо написать функцию take, которая принимает любой Iterable объект и возвращает итератор по заданному количеству его элементов
 
-const take = <T extends IterableIterator<any>>(iter: T, limit: number): T => {
+export const take = <T extends IterableIterator<any>>(iter: T, limit: number): T => {
     let counter = limit;
 
     return {
@@ -28,4 +28,4 @@ const take = <T extends IterableIterator<any>>(iter: T, limit: number): T => {
 
 const randomInt = random(0, 100);
 
-console.log([...take(randomInt, 5)]);
+console.log('take', [...take(randomInt, 5)]);

@@ -22,7 +22,7 @@ export const random = (min: number, max: number): IterableIterator<number> => {
 
 const randomInt = random(0, 100);
 
-console.log(randomInt.next());
-console.log(randomInt.next());
-console.log(randomInt.next());
-console.log(randomInt.next());
+console.log('random', randomInt.next());
+console.log('random', randomInt.next());
+console.log('random', randomInt.next());
+console.log('random', randomInt.next());
