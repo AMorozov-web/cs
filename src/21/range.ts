@@ -54,7 +54,7 @@ class MyRange<T extends string | number> {
     private from(value: number): T {
         switch (this.type) {
             case 'string':
-                return String.fromCharCode(value) as T;
+                return String.fromCodePoint(value) as T;
             default:
                 return value as T;
         }
