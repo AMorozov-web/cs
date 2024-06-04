@@ -13,13 +13,14 @@ export const take = <T extends IterableIterator<any>>(iter: T, limit: number): T
         next() {
             const current = iter.next();
             const done = !counter || current.done;
+            const value = done ? undefined : current.value;
 
             if (!done) {
                 counter--;
             }
 
             return {
-                value: current.value,
+                value,
                 done,
             }
         }
