@@ -11,8 +11,15 @@ export const take = <T extends IterableIterator<any>>(iter: T, limit: number): T
         },
 
         next() {
+            if (!counter) {
+                return {
+                    done: true,
+                    value: undefined,
+                }
+            }
+
             const current = iter.next();
-            const done = !counter || current.done;
+            const done = current.done;
             const value = done ? undefined : current.value;
 
             if (!done) {
