@@ -14,8 +14,15 @@ const enumerate = <T>(iter: IterableIterator<T>): IterableIterator<[number, T]> 
         next() {
             const {done, value} = iter.next();
 
+            if (done) {
+                return {
+                    value: undefined,
+                    done: true,
+                }
+            }
+
             return {
-                value: [done ? counter : counter++, value],
+                value: [counter++, value],
                 done,
             }
         }
