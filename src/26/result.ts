@@ -1,4 +1,4 @@
-class Result<T, E> {
+export class Result<T, E> {
     result?: T;
     error?: E;
     state: 'OK' | 'ERR';
