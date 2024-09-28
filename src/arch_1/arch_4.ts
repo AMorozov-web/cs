@@ -1,5 +1,3 @@
-
-
 const indexedWrapper = <K extends string | number, V>(arg: Map<K, V>) => {
     return new Proxy(arg, {
         get(target, prop, receiver) {
@@ -25,9 +23,6 @@ const indexedWrapper = <K extends string | number, V>(arg: Map<K, V>) => {
         }
     }) as Map<K, V> & {[K: number]: V}
 }
-
-
-new Array(length).fill(0);
 
 
 // Необходимо написать функцию, которая принимает Map/Set объект и возвращает обертку,
